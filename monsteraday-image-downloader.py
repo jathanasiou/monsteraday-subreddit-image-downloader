@@ -10,17 +10,15 @@ from bs4 import BeautifulSoup
 targetSubreddit = 'monsteraday'
 MIN_SCORE = 0  # the default minimum score before it is downloaded
 DL_Directory = 'archive'
+separator = '-------------------------------------------'
 
 if len(sys.argv) < 2:
     # no command line options sent:
     print('No parameters, using default options.')
     print('Downloading from /r/%s, minimum score=%d' % (targetSubreddit, MIN_SCORE))
 elif len(sys.argv) >= 2:
-    # the subreddit was specified:
-    targetSubreddit = sys.argv[1]
-    if len(sys.argv) >= 3:
-        # the desired minimum score was also specified:
-        MIN_SCORE = int(sys.argv[2])
+    # the minimum score was specified:
+    MIN_SCORE = int(sys.argv[1])
 
 imgurUrlPattern = re.compile(r'(http://i.imgur.com/(.*))(\?.*)?')
 
@@ -57,6 +55,7 @@ submissions = r.get_subreddit(targetSubreddit).get_hot(limit=1000)
 
 # Process all the submissions from the front page
 for submission in submissions:
+    print(separator)
     print('Current URL: %s' % submission.url)
     print submission.title
     # Check for all the cases where we will skip a submission:
@@ -137,4 +136,3 @@ for submission in submissions:
             saved = True
         if not saved:
             print('No image could be retrieved.')
-    print('-------------------------------------------')

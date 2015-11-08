@@ -10,8 +10,8 @@ Command-line usage:
 
 ###No parameters
 
-`python monsteraday-image-downloader.py`
+`$ python monsteraday-image-downloader.py`
 
 ###Defining minimum score to download (default 0)
 
-`python monsteraday-image-downloader.py 50`
+`$ python monsteraday-image-downloader.py 50`
