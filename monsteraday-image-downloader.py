@@ -11,6 +11,7 @@ targetSubreddit = 'monsteraday'
 MIN_SCORE = 0  # the default minimum score before it is downloaded
 DL_Directory = 'archive'
 separator = '-------------------------------------------'
+bRemoveDayNumber = True
 
 if len(sys.argv) < 2:
     # no command line options sent:
@@ -90,6 +91,10 @@ for submission in submissions:
             imageUrl = 'http:' + match['href']
             fileExtension = imageUrl[imageUrl.rfind('.'):]
             localFileName = submission.title + fileExtension
+
+            if (':' in localFileName) and bRemoveDayNumber:
+                localFileName = localFileName[localFileName.find(':') + 2:]
+
             downloadImage(imageUrl, localFileName)
             saved = True
         if not saved:
@@ -108,6 +113,10 @@ for submission in submissions:
 
         fileExtension = imgurFilename[imgurFilename.rfind('.'):]
         localFileName = submission.title + fileExtension
+
+        if (':' in localFileName) and bRemoveDayNumber:
+            localFileName = localFileName[localFileName.find(':') + 2:]
+
         downloadImage(submission.url, localFileName)
 
     elif 'http://imgur.com/' in submission.url:
@@ -132,6 +141,10 @@ for submission in submissions:
 
             fileExtension = imageUrl[imageUrl.rfind('.'):]
             localFileName = submission.title + fileExtension
+
+            if (':' in localFileName) and bRemoveDayNumber:
+                localFileName = localFileName[localFileName.find(':') + 2:]
+
             downloadImage(imageUrl, localFileName)
             saved = True
         if not saved:
