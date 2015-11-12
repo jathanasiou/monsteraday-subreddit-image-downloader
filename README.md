@@ -5,7 +5,7 @@ This fork checks the **/r/monsteraday subreddit** and attempts to download all t
 Hopefully soon there will be options to affect format/quality too.
 
 ##Requirements and info:
-No matte how it's run, the script will create a folder called **"archive"** and download all eligible images there. Currently this means any imgur-hosted link which was posted by /u/StoneStrix. Furthermore, the submission titles(which are used as filanames) will be renamed so that the 'Day x:' part is removed and entries are saved alphabetically.
+No matter how it's run, the script will create a folder called **"archive"** and download all eligible images there. Currently this means any imgur-hosted link which was posted by /u/StoneStrix. Furthermore, the submission titles(which are used as filanames) will be renamed so that the 'Day x:' part is removed and entries are saved alphabetically.
 ###Linux
 When running via **Linux** you need to have **Python2** installed as well as the following Python libraries, which can be retrieved either via **pip** or your distro's **package manager**.  
 
