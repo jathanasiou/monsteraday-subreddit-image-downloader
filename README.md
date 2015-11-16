@@ -11,7 +11,8 @@ When running via **Linux** you need to have **Python2** installed as well as the
 
 * praw
 * requests
-* beautifulsoup
+* beautifulsoup4
+* lxml
 
 Then simply download the .py script and follow the command-line instructions below.
 
@@ -28,3 +29,5 @@ Intermediate users might also want to download **Python 2** and install it norma
 ###Defining minimum score to download (default 0)
 
 `$ python monsteraday-image-downloader.py 50`
+
+If there are multiple versions of python installed, it may be necessary to use `$ ptyhon2` instead of `$ python` in systems where more than one version of python is installed and python2 is not the default python environment.
